@@ -34,8 +34,8 @@ def get_pdf_chunks(pdf_document):
 
 #To create and store embeddings
 def get_pdf_vector_store(pdf_chunks):
-    embeddings_model = OpenAIEmbeddings()
-    vector_store = FAISS.from_documents(pdf_chunks, OpenAIEmbeddings())
+    embeddings = OpenAIEmbeddings()
+    vector_store = FAISS.from_documents(pdf_chunks, embeddings)
     return vector_store
 
 def main():

@@ -1,5 +1,5 @@
 import streamlit as st
-from main import get_pdf_data,get_pdf_chunks
+from main import get_pdf_data,get_pdf_chunks,get_pdf_vector_store
 
 
 st.set_page_config("API")

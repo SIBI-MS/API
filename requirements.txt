@@ -1,3 +1,6 @@
 langchain
 streamlit
 fitz
+langchain-openai
+python-dotenv
+faiss-cpu

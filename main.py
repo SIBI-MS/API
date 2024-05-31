@@ -1,5 +1,14 @@
 import fitz 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+import os
+from langchain_openai import OpenAIEmbeddings
+from langchain_community.vectorstores import FAISS
+from dotenv import load_dotenv
+
+
+load_dotenv()
+# openai_api_key = os.getenv('OPENAI_API_KEY')
+
 
 
 #Extract data from the pdfs
@@ -25,7 +34,9 @@ def get_pdf_chunks(pdf_document):
 
 #To create and store embeddings
 def get_pdf_vector_store(pdf_chunks):
-    embeddings=
+    embeddings_model = OpenAIEmbeddings()
+    vector_store = FAISS.from_documents(pdf_chunks, OpenAIEmbeddings())
+    return vector_store
 
 def main():
     pass
